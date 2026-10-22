@@ -1,0 +1,17 @@
+{
+  "name": "http-basic-authentication-challenge-decode",
+  "version": "0.1.0",
+  "description": "Extracts username and password from an HTTP Basic Authorization header, returning null on invalid input.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}
