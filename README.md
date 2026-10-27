@@ -22,3 +22,10 @@ The `decodeBasicCredentials` export takes just the base64 segment (everything af
 - An empty username (`:secret`) or empty password (`alice:`) is valid and decodes to an empty string for the missing half.
 - Credentials are decoded as UTF-8 per RFC 7617, not ISO-8859-1. This matches what every modern browser sends and what servers expect.
 - A header with no colon after decoding (e.g. a bare username) returns `null`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
